@@ -9,7 +9,10 @@ export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     {path: 'admin',loadChildren:() => import('./modules/admin/admin.module').then(m =>m.AdminModule)},
     {path: 'customer',loadChildren:() => import('./modules/customer/customer.module').then(m =>m.CustomerModule)}
+
 ];
+
+
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
