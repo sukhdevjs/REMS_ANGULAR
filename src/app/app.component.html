@@ -1,13 +1,33 @@
-<div>
+<div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
     <nz-header class="main-header customer-navbar" nz-row nzType="flex" >
         <div class="navbar-title">
             <a routerLink="/login"> Real Estate Management System</a>
         </div>
         <div class="nav-link">
             <a nz-button nzType="link"  (click)="gotoRegister()"  routerLinkActive="active">Register</a>
-            <a nz-button nzType="link"  (click)="gotoLogin()"     routerLinkActive="active">Login</a>
-            <!-- <a nz-button nzType="link"    [routerLink]="'/login'" routerLinkActive="active">Login</a> -->
-
+            <a nz-button nzType="link"  (click)="logOut()"     routerLinkActive="active">Login</a>
+        </div>
+    </nz-header>
+</div>
+<div *ngIf="isAdminLoggedIn">
+    <nz-header class="main-header customer-navbar" nz-row nzType="flex" >
+        <div class="navbar-title">
+            <a routerLink="/admin/dashboard"> Real Estate Management System</a>
+        </div>
+        <div class="nav-link">
+            <a nz-button nzType="link"  (click)="gotoAdminDashboard()"  routerLinkActive="active">Dashboard</a>
+            <a nz-button nzType="link"  (click)="logOut()"     routerLinkActive="active">Logout</a>
+        </div>
+    </nz-header>
+</div>
+<div *ngIf="isCustomerLoggedIn">
+    <nz-header class="main-header customer-navbar" nz-row nzType="flex" >
+        <div class="navbar-title">
+            <a routerLink="/login"> Real Estate Management System</a>
+        </div>
+        <div class="nav-link">
+            <a nz-button nzType="link"  (click)="gotoCustomerDashboard()"  routerLinkActive="active">Dashboard</a>
+            <a nz-button nzType="link"  (click)="logOut()"     routerLinkActive="active">Logout</a>
         </div>
     </nz-header>
 </div>
