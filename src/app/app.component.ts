@@ -35,6 +35,10 @@ export class AppComponent {
     this.router.navigate(["/customer/dashboard"])
   }
 
+  gotoPostProperty(){
+    this.router.navigate(["/admin/property"])
+  }
+
   
 
   isAdminLoggedIn:boolean = StorageService.isAdminLoggedIn();
