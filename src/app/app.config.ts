@@ -6,12 +6,16 @@ import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient,withFetch } from '@angular/common/http';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+
+
 
 registerLocaleData(en);
 
@@ -27,9 +31,10 @@ export const appConfig: ApplicationConfig = {
       NzButtonModule,
       NzFormModule,
       NzInputModule,
-      NzSpinModule
+      NzSpinModule,
+      NzSelectModule
     ),
     provideAnimationsAsync(),
-    provideHttpClient(),
-  ],
+    provideHttpClient(withFetch()),
+  ], 
 };
