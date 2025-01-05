@@ -15,8 +15,6 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
-
-
 registerLocaleData(en);
 
 export const appConfig: ApplicationConfig = {
